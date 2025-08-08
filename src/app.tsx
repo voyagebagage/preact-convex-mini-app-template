@@ -2,6 +2,7 @@ import { useState } from "preact/hooks";
 import { Counter } from "./components/Counter";
 import { ConvexCounter } from "./components/ConvexCounter";
 import { TaskList } from "./components/TaskList";
+import { ConvexStatus } from "./components/ConvexStatus";
 import { Card } from "./components/Card";
 
 export function App() {
@@ -9,6 +10,7 @@ export function App() {
 
   return (
     <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <ConvexStatus />
       <main class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">

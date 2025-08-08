@@ -5,8 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel dev:frontend dev:backend",
+    "dev:local": "npm run switch:local && npm-run-all --parallel dev:frontend dev:backend:local",
+    "dev:cloud": "npm run switch:cloud && npm-run-all --parallel dev:frontend dev:backend:cloud",
     "dev:frontend": "vite",
     "dev:backend": "convex dev",
+    "dev:backend:local": "convex dev --env-file .env.local",
+    "dev:backend:cloud": "convex dev --env-file .env.local",
+    "switch:local": "node scripts/switch-env.js local",
+    "switch:cloud": "node scripts/switch-env.js cloud",
+    "convex": "node scripts/convex-env.js",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0"
