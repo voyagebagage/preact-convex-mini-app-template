@@ -1,5 +1,7 @@
 import { useState } from "preact/hooks";
 import { Counter } from "./components/Counter";
+import { ConvexCounter } from "./components/ConvexCounter";
+import { TaskList } from "./components/TaskList";
 import { Card } from "./components/Card";
 
 export function App() {
@@ -18,7 +20,7 @@ export function App() {
             </p>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
             <Card
               title="⚡ Fast & Lightweight"
               description="Preact provides the same modern API as React but in just 3kB"
@@ -35,10 +37,27 @@ export function App() {
               title="⚡ Vite Powered"
               description="Lightning fast development with Vite build tool"
             />
+            <Card
+              title="🗄️ Convex Backend"
+              description="Real-time database with serverless functions"
+            />
+            <Card
+              title="🔄 Real-time Sync"
+              description="Data syncs automatically across all clients"
+            />
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="flex justify-center">
+              <Counter count={count} setCount={setCount} />
+            </div>
+            <div class="flex justify-center">
+              <ConvexCounter />
+            </div>
           </div>
 
           <div class="flex justify-center">
-            <Counter count={count} setCount={setCount} />
+            <TaskList />
           </div>
         </div>
       </main>

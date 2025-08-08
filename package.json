@@ -4,7 +4,9 @@
   "description": "A modern Preact app with TypeScript and Tailwind CSS",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "npm-run-all --parallel dev:frontend dev:backend",
+    "dev:frontend": "vite",
+    "dev:backend": "convex dev",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0"
@@ -13,7 +15,8 @@
     "preact": "^10.19.3",
     "@tanstack/react-router": "^1.58.15",
     "@tanstack/react-router-devtools": "^1.58.15",
-    "@preact/compat": "^18.3.1"
+    "@preact/compat": "^18.3.1",
+    "convex": "^1.16.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
@@ -29,6 +32,7 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.39.0",
-    "vite": "^5.0.10"
+    "vite": "^5.0.10",
+    "npm-run-all": "^4.1.5"
   }
 }
