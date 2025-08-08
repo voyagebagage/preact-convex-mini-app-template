@@ -15,14 +15,14 @@ const commands = {
     description: "Switch to local Convex and start development",
     run: () => {
       console.log("🔄 Switching to local Convex deployment...");
-      execSync("npm run dev:local", { stdio: "inherit" });
+      execSync("pnpm dev:local", { stdio: "inherit" });
     },
   },
   cloud: {
     description: "Switch to cloud Convex and start development",
     run: () => {
       console.log("☁️  Switching to cloud Convex deployment...");
-      execSync("npm run dev:cloud", { stdio: "inherit" });
+      execSync("pnpm dev:cloud", { stdio: "inherit" });
     },
   },
   switch: {
@@ -30,10 +30,10 @@ const commands = {
     run: () => {
       const env = process.argv[3];
       if (!env || !["local", "cloud"].includes(env)) {
-        console.log("Usage: npm run convex switch [local|cloud]");
+        console.log("Usage: pnpm convex switch [local|cloud]");
         return;
       }
-      execSync(`npm run switch:${env}`, { stdio: "inherit" });
+      execSync(`pnpm switch:${env}`, { stdio: "inherit" });
     },
   },
   status: {
@@ -44,7 +44,7 @@ const commands = {
 
         if (!fs.existsSync(envPath)) {
           console.log("❌ No .env.local file found");
-          console.log("💡 Run: npm run convex local  or  npm run convex cloud");
+          console.log("💡 Run: pnpm convex local  or  pnpm convex cloud");
           return;
         }
 
@@ -72,9 +72,9 @@ if (!command || !commands[command]) {
   });
   console.log("");
   console.log("Examples:");
-  console.log("  npm run convex local   # Start local development");
-  console.log("  npm run convex cloud   # Start cloud development");
-  console.log("  npm run convex status  # Check current environment");
+  console.log("  pnpm convex local   # Start local development");
+  console.log("  pnpm convex cloud   # Start cloud development");
+  console.log("  pnpm convex status  # Check current environment");
   process.exit(0);
 }
 
