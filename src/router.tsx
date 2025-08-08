@@ -5,27 +5,55 @@ import {
   Outlet,
   Link,
 } from "@tanstack/react-router";
-import { Home } from "./pages/Home";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
+import { App } from "./app";
 import { About } from "./pages/About";
 import { Contact } from "./pages/Contact";
 
 const rootRoute = createRootRoute({
   component: () => (
     <>
-      <nav style={{ padding: "20px", borderBottom: "1px solid #ccc" }}>
-        <Link to="/" style={{ marginRight: "20px" }}>
-          Home
-        </Link>
-        <Link to="/about" style={{ marginRight: "20px" }}>
-          About
-        </Link>
-        <Link to="/contact" style={{ marginRight: "20px" }}>
-          Contact
-        </Link>
-      </nav>
-      <div style={{ padding: "20px" }}>
-        <Outlet />
-      </div>
+      <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-8 h-8 text-indigo-600"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                />
+              </svg>
+              <h1 class="text-xl font-bold text-gray-900">Preact App</h1>
+            </div>
+
+            <nav class="flex space-x-8">
+              <Link
+                to="/"
+                class="text-gray-600 hover:text-indigo-600 transition-colors">
+                Home
+              </Link>
+              <Link
+                to="/about"
+                class="text-gray-600 hover:text-indigo-600 transition-colors">
+                About
+              </Link>
+              <Link
+                to="/contact"
+                class="text-gray-600 hover:text-indigo-600 transition-colors">
+                Contact
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <Outlet />
+      <TanStackRouterDevtools initialIsOpen={false} />
     </>
   ),
 });
@@ -33,7 +61,7 @@ const rootRoute = createRootRoute({
 const homeRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "/",
-  component: Home,
+  component: App,
 });
 
 const aboutRoute = createRoute({

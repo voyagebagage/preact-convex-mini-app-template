@@ -12,6 +12,7 @@
   "dependencies": {
     "preact": "^10.19.3",
     "@tanstack/react-router": "^1.58.15",
+    "@tanstack/react-router-devtools": "^1.58.15",
     "@preact/compat": "^18.3.1"
   },
   "devDependencies": {

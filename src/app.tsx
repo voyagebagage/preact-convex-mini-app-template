@@ -1,6 +1,5 @@
 import { useState } from "preact/hooks";
 import { Counter } from "./components/Counter";
-import { Header } from "./components/Header";
 import { Card } from "./components/Card";
 
 export function App() {
@@ -8,8 +7,6 @@ export function App() {
 
   return (
     <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <Header />
-
       <main class="container mx-auto px-4 py-8">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-12">
