@@ -7,14 +7,16 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Default template configurations
+// Users should update these with their actual deployment details
 const envConfigs = {
   local: {
-    CONVEX_DEPLOYMENT: "local-oliv_dev-preact_mini_app_dev",
+    CONVEX_DEPLOYMENT: "local:your-local-deployment-name",
     VITE_CONVEX_URL: "http://127.0.0.1:3210",
   },
   cloud: {
-    CONVEX_DEPLOYMENT: "colorful-curlew-558",
-    VITE_CONVEX_URL: "https://colorful-curlew-558.convex.cloud",
+    CONVEX_DEPLOYMENT: "your-deployment-name-here",
+    VITE_CONVEX_URL: "https://your-deployment-name.convex.cloud",
   },
 };
 

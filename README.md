@@ -15,24 +15,37 @@ A modern, full-stack web application template featuring:
 ### Prerequisites
 
 - Node.js 18+ and pnpm
+- Convex account (free at [convex.dev](https://convex.dev))
 
-### Development
+### Setup
 
 ```bash
 # Install dependencies
 pnpm install
 
+# Configure Convex (creates deployments automatically)
+npx convex dev --configure=new --dev-deployment cloud
+npx convex dev --configure=new --dev-deployment local
+```
+
+**⚠️ Important**: Update `scripts/switch-env.js` with your actual deployment names from the Convex dashboard.
+
+### Development
+
+```bash
 # Start LOCAL development (recommended)
-npm run convex local
+pnpm convex local
 
 # OR start CLOUD development
-npm run convex cloud
+pnpm convex cloud
 
 # OR start with current environment
 pnpm dev
 ```
 
 Visit `http://localhost:3000` to see your app!
+
+📖 **Need help?** See [SETUP.md](./SETUP.md) for detailed configuration instructions.
 
 ## 🏠 Local vs ☁️ Cloud Development
 
